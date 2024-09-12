@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/4fff2f386e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="search-container">
+                <input type="text" class="search" placeholder="Search your location">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            </div>
+            <div class="theme-toggle">
+                <span class="temp-celsius">°C</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+                <span class="temp-fahrenheit">°F</span>
+            </div>
+        </header>
+        <main>
+            <section class="current-weather">
+                <div class="location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>New York, US</span>
+                </div>
+                <div class="weather-details">
+                    <h2>Sunday</h2>
+                    <p>04 Aug, 2024</p>
+                    <div class="temperature">
+                        <img src="https://openweathermap.org/img/wn/09d@4x.png">
+                        <span class="temp">28°C</span>
+                        <span class="min-max-temp">/24°C</span>
+                    </div>
+                    <p>Heavy Rain<br>Feels like 31°C</p>
+                </div>
+            </section>
+            <section class="highlights">
+                <h3>Today's Highlight</h3>
+                <div class="highlight-cards">
+                    <div class="card">
+                        <p>Wind Status</p>
+                        <h4>7.90 km/h</h4>
+                        <p>9:00 AM</p>
+                    </div>
+                    <div class="card">
+                        <p>Humidity</p>
+                        <h4>85%</h4>
+                        <p>Humidity is good</p>
+                    </div>
+                    <div class="card">
+                        <p>UV Index</p>
+                        <h4>4 UV</h4>
+                        <p>Moderate UV</p>
+                    </div>
+                    <div class="card">
+                        <p>Visibility</p>
+                        <h4>5 km</h4>
+                        <p>9:00 AM</p>
+                    </div>
+                    <div class="card">
+                        <p>Sunrise</p>
+                        <h4>4:50 AM</h4>
+                    </div>
+                    <div class="card">
+                        <p>Sunset</p>
+                        <h4>6:45 PM</h4>
+                    </div>
+                </div>
+            </section>
+            <section class="forecast">
+                <h3>5 Day Forecast</h3>
+                <div class="forecast-cards">
+                    <div class="forecast-card">
+                        <p>Mon</p>
+                        <img src="https://openweathermap.org/img/wn/09d@2x.png">
+                        <p>28°C</p>
+                    </div>
+                    <div class="forecast-card">
+                        <p>Tue</p>
+                        <img src="https://openweathermap.org/img/wn/02d@2x.png">
+                        <p>31°C</p>
+                    </div>
+                    <div class="forecast-card">
+                        <p>Wed</p>
+                        <img src="https://openweathermap.org/img/wn/10d@2x.png">
+                        <p>27°C</p>
+                    </div>
+                    <div class="forecast-card">
+                        <p>Thu</p>
+                        <img src="https://openweathermap.org/img/wn/11d@2x.png">
+                        <p>29°C</p>
+                    </div>
+                    <div class="forecast-card">
+                        <p>Friday</p>
+                        <img src="https://openweathermap.org/img/wn/01d@2x.png">
+                        <p>32°C</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
