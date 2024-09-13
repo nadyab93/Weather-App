@@ -14,11 +14,13 @@ const forecastCards = document.querySelector('.forecast-cards');
 let isCelsius = true;
 const defaultLocation = 'New York, US';
 
+// Function to update the theme based on temperature unit
 function updateTheme() {
     const themeClass = isCelsius ? 'celsius-theme' : 'fahrenheit-theme';
     document.body.className = themeClass;
 }
 
+// Event listener for search icon click/tap
 searchIcon.addEventListener('click', () => {
     const location = searchInput.value.trim();
     if (location) {
@@ -26,6 +28,7 @@ searchIcon.addEventListener('click', () => {
     }
 });
 
+// Event listener for temperature unit toggle
 tempToggle.addEventListener('change', () => {
     isCelsius = !isCelsius;
     const location = searchInput.value.trim() || defaultLocation;
@@ -33,6 +36,7 @@ tempToggle.addEventListener('change', () => {
     updateTheme();
 });
 
+// Event listener for Enter key in search input
 searchInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         const location = searchInput.value.trim();
@@ -42,6 +46,7 @@ searchInput.addEventListener('keydown', (event) => {
     }
 });
 
+// Function to fetch weather data
 function fetchWeatherData(location) {
     const url = `${BASE_URL}weather?q=${location}&appid=${API_KEY}&units=${isCelsius ? 'metric' : 'imperial'}`;
     fetch(url)
@@ -55,6 +60,7 @@ function fetchWeatherData(location) {
         });
 }
 
+// Function to fetch forecast data
 function fetchForecastData(location) {
     const url = `${BASE_URL}forecast?q=${location}&appid=${API_KEY}&units=${isCelsius ? 'metric' : 'imperial'}`;
     fetch(url)
@@ -67,6 +73,7 @@ function fetchForecastData(location) {
         });
 }
 
+// Function to update current weather
 function updateCurrentWeather(data) {
     const { name, sys, main, weather, wind, visibility } = data;
     const temp = Math.round(main.temp);
@@ -91,7 +98,6 @@ function updateCurrentWeather(data) {
     currentWeatherSection.querySelector('.temperature img').src = weatherIconUrl;
     currentWeatherSection.querySelector('p:last-child').textContent = weatherDesc;
 
-    // Update today's highlights
     const windStatus = `${wind.speed} km/h`;
     highlightCards.querySelector('.card:nth-child(1) h4').textContent = windStatus;
     highlightCards.querySelector('.card:nth-child(1) p:last-child').textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
@@ -100,7 +106,7 @@ function updateCurrentWeather(data) {
     highlightCards.querySelector('.card:nth-child(2) h4').textContent = humidityStatus;
     highlightCards.querySelector('.card:nth-child(2) p:last-child').textContent = main.humidity > 70 ? "High Humidity" : "Humidity is good";
 
-    const uvIndex = "4 UV"; // Dummy data as OpenWeatherMap API doesn't include UV in basic plan
+    const uvIndex = "4 UV";
     highlightCards.querySelector('.card:nth-child(3) h4').textContent = uvIndex;
     highlightCards.querySelector('.card:nth-child(3) p:last-child').textContent = "Moderate UV";
 
@@ -113,9 +119,10 @@ function updateCurrentWeather(data) {
     highlightCards.querySelector('.card:nth-child(6) h4').textContent = new Date(sys.sunset * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
 }
 
+// Function to update forecast
 function updateForecast(data) {
-    forecastCards.innerHTML = ''; // Clear the current forecast cards
-    const forecastList = data.list.filter(item => item.dt_txt.includes('12:00:00')); // Filter for noon forecast entries
+    forecastCards.innerHTML = '';
+    const forecastList = data.list.filter(item => item.dt_txt.includes('12:00:00'));
 
     forecastList.forEach(forecast => {
         const day = new Date(forecast.dt_txt).toLocaleDateString('en-US', { weekday: 'short' });
@@ -130,9 +137,9 @@ function updateForecast(data) {
             </div>
         `;
 
-        forecastCards.insertAdjacentHTML('beforeend', forecastCard); // Add each forecast card to the DOM
+        forecastCards.insertAdjacentHTML('beforeend', forecastCard);
     });
 }
 
-// Initialize with default location
+// Fetch weather data for the default location on initial load
 fetchWeatherData(defaultLocation);

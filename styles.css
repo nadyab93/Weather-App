@@ -19,37 +19,34 @@ body:not(.celsius-theme):not(.fahrenheit-theme) {
     background-color: #000000; 
 }
 
-/* Default theme styles */
 .current-weather, 
 .highlights, 
 .forecast {
-    background-color: #0081ff; /* Background color for default (Celsius) */
+    background-color: #0081ff; 
 }
 
 .highlight-cards .card {
-    background-color: #4da7ff; /* Background color for cards in default (Celsius) */
+    background-color: #4da7ff; 
 }
 
-/* Styles for Celsius theme */
 .celsius-theme .current-weather, 
 .celsius-theme .highlights, 
 .celsius-theme .forecast {
-    background-color: #0081ff; /* Background color for Celsius */
+    background-color: #0081ff; 
 }
 
 .celsius-theme .highlight-cards .card {
-    background-color: #4da7ff; /* Background color for cards in Celsius */
+    background-color: #4da7ff; 
 }
 
-/* Styles for Fahrenheit theme */
 .fahrenheit-theme .current-weather, 
 .fahrenheit-theme .highlights, 
 .fahrenheit-theme .forecast {
-    background-color: #672e2b; /* Background color for Fahrenheit */
+    background-color: #672e2b; 
 }
 
 .fahrenheit-theme .highlight-cards .card {
-    background-color: #956d6b; /* Background color for cards in Fahrenheit */
+    background-color: #956d6b;
 }
 
 .container {
@@ -82,9 +79,9 @@ header {
     top: 50%;
     transform: translateY(-50%);
     color: #888;
-    pointer-events: none;
-    cursor: pointer; /* Added cursor pointer */
-}
+    pointer-events: auto;
+    cursor: pointer;
+}    
 
 .theme-toggle {
     display: flex;
@@ -278,4 +275,3 @@ main {
         font-size: 14px;
     }
 }
-
