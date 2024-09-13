@@ -29,15 +29,15 @@ Figma: Used for UI design and prototyping.
 
 # External Resources
 
-- OpenWeatherMap API: Used for fetching weather data.
-- Font Awesome: Provides icons used in the UI.
-- Figma: Tool used for designing the user interface.
+- [OpenWeatherMap API](https://openweathermap.org/): Used for fetching weather data.
+- [Font Awesome](https://fontawesome.com/): Provides icons used in the UI.
+- [Figma](https://www.figma.com/): Tool used for designing the user interface.
 
 # License
 
 MIT License
 
-Copyright (c) 2024 Nadya Melissa
+Copyright (c) 2024 Nadya Melissa Bharrat
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
