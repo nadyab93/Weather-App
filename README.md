@@ -23,7 +23,7 @@ Figma: Used for UI design and prototyping.
 
 # Usage
 
-1) Search for Weather: Enter a location by city,coutry in the search bar and click the search icon or press Enter to view weather details for that location.
+1) Search for Weather: Enter a location by city, country in the search bar and click the search icon or press Enter to view weather details for that location.
 2) Toggle Temperature Units: Use the switch to toggle between Celsius and Fahrenheit units.
 3)View Weather Details: Check the current weather, highlights, and 5-day forecast sections for comprehensive weather information.
 
