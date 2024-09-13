@@ -15,17 +15,41 @@ body {
     margin: 0;
 }
 
-/* Default theme styles */
 body:not(.celsius-theme):not(.fahrenheit-theme) {
-    background-color: #000000; /* Background color for the body */
+    background-color: #000000; 
 }
 
-.current-weather, .highlights, .forecast {
-    background-color: #0081ff; /* Default background color for these sections */
+/* Default theme styles */
+.current-weather, 
+.highlights, 
+.forecast {
+    background-color: #0081ff; /* Background color for default (Celsius) */
 }
 
-.card {
-    background-color: #4da7ff; /* Default background color for cards */
+.highlight-cards .card {
+    background-color: #4da7ff; /* Background color for cards in default (Celsius) */
+}
+
+/* Styles for Celsius theme */
+.celsius-theme .current-weather, 
+.celsius-theme .highlights, 
+.celsius-theme .forecast {
+    background-color: #0081ff; /* Background color for Celsius */
+}
+
+.celsius-theme .highlight-cards .card {
+    background-color: #4da7ff; /* Background color for cards in Celsius */
+}
+
+/* Styles for Fahrenheit theme */
+.fahrenheit-theme .current-weather, 
+.fahrenheit-theme .highlights, 
+.fahrenheit-theme .forecast {
+    background-color: #672e2b; /* Background color for Fahrenheit */
+}
+
+.fahrenheit-theme .highlight-cards .card {
+    background-color: #956d6b; /* Background color for cards in Fahrenheit */
 }
 
 .container {
@@ -59,6 +83,7 @@ header {
     transform: translateY(-50%);
     color: #888;
     pointer-events: none;
+    cursor: pointer; /* Added cursor pointer */
 }
 
 .theme-toggle {
@@ -199,27 +224,58 @@ main {
     height: 40px;
 }
 
-.celsius-theme .current-weather,
-.celsius-theme .highlights,
-.celsius-theme .forecast {
-    background-color: #0081ff;
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        max-width: 600px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-container {
+        width: 100%;
+    }
+
+    .search {
+        padding: 10px 30px 10px 15px; 
+    }
+
+    .theme-toggle {
+        margin-top: 10px;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .forecast {
+        grid-column: span 1;
+    }
+
+    .highlight-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.celsius-theme .card {
-    background-color: #4da7ff;
+@media (max-width: 480px) {
+    .search {
+        padding: 10px 20px 10px 10px;
+    }
+
+    .temp-celsius, .temp-fahrenheit {
+        font-size: 18px;
+    }
+
+    .forecast-card img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .card {
+        font-size: 14px;
+    }
 }
-
-.fahrenheit-theme .current-weather,
-.fahrenheit-theme .highlights,
-.fahrenheit-theme .forecast {
-    background-color: #672e2b;
-}
-
-.fahrenheit-theme .card {
-    background-color: #956d6b;
-}
-
-
-
-
 
