@@ -15,11 +15,11 @@ https://github.com/user-attachments/assets/e45ede72-05d3-498c-b9bd-e9e0ca6494ae
 
 # Technologies Used
 
-HTML: Markup language for structuring the web pages.
-CSS: Styling language used to style the application.
-JavaScript: Programming language used to handle dynamic functionality and API interactions.
-OpenWeatherMap API: Provides weather data for current conditions and forecasts.
-Figma: Used for UI design and prototyping.
+- HTML: Markup language for structuring the web pages.
+- CSS: Styling language used to style the application.
+- JavaScript: Programming language used to handle dynamic functionality and API interactions.
+- OpenWeatherMap API: Provides weather data for current conditions and forecasts.
+- Figma: Used for UI design and prototyping.
 
 # Usage
 
